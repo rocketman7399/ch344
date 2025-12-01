@@ -28,10 +28,10 @@ bool g_ChState[5] = { false, false, false, false, false };
 // 按钮 ID 数组 (界面从上到下的顺序)
 const int g_BtnIDs[5] = {
 	IDC_BTN_J3,
-	IDC_BTN_J4,  // J4 在第2位
+	IDC_BTN_J4, 
 	IDC_BTN_J5,
 	IDC_BTN_J7,
-	IDC_BTN_J6   // J6 在最后
+	IDC_BTN_J6   
 };
 
 // 按钮显示标签
@@ -99,7 +99,6 @@ void SetGroupMode(HANDLE hPort, pChipPropertyS pChip, int basePin, bool isFast)
 	}
 	CH910x_GpioSet(hPort, pChip, Mask_SEL | Mask_5V, targetVal);
 
-	// ★★★ 关键修改：增加 100ms 延时 ★★★
 	// 等待 SEL 信号电平完全稳定（特别是从 0 变 1 时）
 	// 防止 SEL 还没升上去，PWR 就通电了
 	Sleep(100);
