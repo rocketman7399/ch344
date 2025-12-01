@@ -1,0 +1,84 @@
+// =======================================================
+// CH343PtDemo.rc - 最终修复版
+// =======================================================
+
+#include "resource.h"
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+IDI_SMALL               ICON                    "SMALL.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_main DIALOGEX 0, 0, 260, 320
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX
+CAPTION "CH344Q 智能控制台"
+FONT 10, "Microsoft YaHei", 0, 0, 0x0
+BEGIN
+// --- 顶部：连接区域 ---
+GROUPBOX        " 连接设置 ", IDC_STATIC, 15, 10, 230, 50
+
+LTEXT           "端口选择:", IDC_STATIC, 25, 28, 40, 8
+COMBOBOX        IDC_PortNum, 65, 26, 70, 100, CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+
+PUSHBUTTON      "刷新", IDC_BTN_SEARCH, 140, 25, 30, 15
+PUSHBUTTON      "连 接", IDC_OpenPort, 175, 25, 30, 15
+PUSHBUTTON      "断 开", IDC_ClosePort, 210, 25, 30, 15
+
+// --- 中间：通道控制 ---
+LTEXT           "通道独立控制:", IDC_STATIC, 15, 75, 100, 8
+
+// 顺序: J3 -> J4 -> J5 -> J7 -> J6
+PUSHBUTTON      "J3: 数据传输", IDC_BTN_J3, 25, 90, 210, 24
+PUSHBUTTON      "J4: 数据传输", IDC_BTN_J4, 25, 120, 210, 24
+PUSHBUTTON      "J5: 数据传输", IDC_BTN_J5, 25, 150, 210, 24
+PUSHBUTTON      "J7: 数据传输", IDC_BTN_J7, 25, 180, 210, 24
+PUSHBUTTON      "J6: 数据传输", IDC_BTN_J6, 25, 210, 210, 24
+
+// --- 底部：全局控制 ---
+GROUPBOX        "", IDC_STATIC, 15, 245, 230, 60
+PUSHBUTTON      "一键归位\n(全部数据)", IDC_BTN_ALL_DATA, 25, 258, 100, 35, BS_MULTILINE
+PUSHBUTTON      "火力全开\n(全部快充)", IDC_BTN_ALL_FAST, 135, 258, 100, 35, BS_MULTILINE
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1, 0, 0, 1
+PRODUCTVERSION 1, 0, 0, 1
+FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+FILEFLAGS 0x1L
+#else
+FILEFLAGS 0x0L
+#endif
+FILEOS 0x4L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+BLOCK "StringFileInfo"
+BEGIN
+BLOCK "080404b0"
+BEGIN
+VALUE "FileDescription", "CH344Q Control Panel"
+VALUE "FileVersion", "1.0.0.1"
+VALUE "InternalName", "CH343PtDemo.exe"
+VALUE "LegalCopyright", "Copyright (C) 2025"
+VALUE "OriginalFilename", "CH343PtDemo.exe"
+VALUE "ProductName", "CH344Q Control Panel"
+VALUE "ProductVersion", "1.0.0.1"
+END
+END
+BLOCK "VarFileInfo"
+BEGIN
+VALUE "Translation", 0x804, 1200
+END
+END
