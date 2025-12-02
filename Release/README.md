@@ -8,7 +8,7 @@
 
 命令行接口 (CLI)：适合自动化脚本调用 (Python/Bat/C#)，支持静默后台运行。
 
-2. 运行环境 | Prerequisites
+2. 运行环境 
 在使用本软件前，请确保电脑满足以下条件：
 
 操作系统：Windows 10 / Windows 11 (64-bit 推荐)
